@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro|Poiret+One');
+*{
+    font-family: 'Maven Pro', sans-serif;
+    text-decoration: none;
+    transition:all 0.8s;
+    list-style: none;
+}
+
+html, body {
+    overflow: hidden;
+    width:  100%;
+    height: 100%;
+    margin: 0px;
+    background-color:#222; 
+}
+
+.intro_container{
+    overflow-y:hidden;
+    height:100%;
+    width:100%;
+    position: relative;
+    top:0;
+    z-index: 1;
+}
+
+#canvas,
+#sub_intro{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+canvas{
+    min-height: 100%;
+    background-color: rgba(150, 70, 70, 1); /* 1d2227 222733, 222*/
+    margin:auto;
+    opacity: 1;
+}
+
+.sub_intro{
+    transition:all 2s;
+    color:white;
+    top:20%;
+    width: 80%;
+    margin: auto;
+    text-align:center;
+    opacity: 0;
+    z-index: 10;
+    /*background-color:rgba(0, 0, 0, 0.3); 
+    border:7px solid white;*/
+}
+.sub_intro_reveal{
+    color:white;
+    position: absolute;
+    top:35% ;
+    width: 80% ;
+    left:0;
+    right:0;
+    margin: auto;
+    text-align:center;
+    opacity: 1 ;
+    font-size:10px;
+    /*background-color:rgba(0, 0, 0, 0.3); 
+    border:7px solid white;*/
+}
+
+#my_name{
+    font-size:80px;
+    font-weight:900;
+    color:rgba(255, 255, 255, 1);
+    margin:auto;
+    display:inline-block;
+}
+
+/* Style all font awesome icons */
+#social_media_icons{
+    margin-top:-30px;
+    opacity: 0;
+    transition: 0.7s;
+}
+.social_media_icons_down{
+    margin-top:0px !important;
+    opacity: 1 !important;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.5;
+}
+
+/* Set a specific color for each brand */
+
+/* linkedin */
+.fa-linkedin {
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    color: #00aced;
+}
+
+/* Github */
+.fa-github {
+    color: white;
+}
+
+.button{
+    background-color:transparent;
+    color:#fff;
+    max-width:200px;
+    height:50px;
+    font-size:43px;
+    cursor:pointer;
+    text-align:center;
+    transition:all 0.4s;
+    position:relative;
+    margin:auto;
+    margin-top:10px;
+    border: 1px solid #fff;
+}
+
+.button_down{
+    margin-top:-30px;
+    opacity: 0;
+}
+.close_button{
+    width:0px;
+    height:0px;
+}
+.button .text{
+    z-index:2;
+    position:absolute;
+    text-align:center;
+    width:100%;
+    transition: 0.3s;
+}
+.remove_text{
+    opacity: 0;
+    font-size: 0;
+}
+.fill{
+    background-color:#fff;
+    width:0%;
+    cursor:pointer;
+    text-align:center;
+    transition:all 0.5s;
+    height:100%;
+    position:absolute;
+}
+
+.button:hover > .fill{
+    width:100%;
+}
+.button:hover > .text{
+    color:#101010;
+}
+
+
+
+/*original state*/
+.info_container{
+    overflow-y:scroll;
+    height: 100%;
+    width:0%;
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:3;
+    background-color:rgba(255, 255, 255, 1);
+    text-align:center;
+    color: #141823 !important;
+    opacity:0;
+}
+
+/*pulled out state*/
+.info_container_out{
+    height:100%;
+    width:0%;
+    position:relative;
+    z-index:3;
+    float: right;
+    background-color: #fff;
+    text-align:center;
+}
+
+.about_me{
+    width:60%;
+    height:80%;
+    display:inline-block;
+}
+.about_me h1{
+    font-size:5vw;
+    text-align:center;
+    margin-top:30px;
+}
+.about_me p{
+    text-align: justify;
+    margin-top:5px;
+    font-size: 25px;
+}
+.about_me img{
+    max-width: 100%;
+    max-height: 100%;
+    opacity:0;
+}
+
+#sub_info_text{
+    text-decoration: underline;
+}
+
+#projects{
+    margin-top:100px;
+}
+
+.dont_display{
+    display: none;
+    opacity: 0;
+}
+
+.icon{
+    opacity: 0;
+    display: inline-block;
+    background-color:#fff;
+    color:#222;
+    position:relative;
+    width:250px;
+    height:250px;
+    margin:10px;
+    cursor:pointer;
+    border:2px solid #fff;
+    top:0;
+    text-align: center;
+}
+.icon .project_text{
+    font-size:20px;
+}
+.icon p{
+    height:100%;
+    width:70%;
+    margin-top:100px;
+    font-size: 0px;
+    display: inline-block;
+}
+
+.icon_fill{
+    background-color: rgba(150, 70, 70, 1);
+    width:100%;
+    height:100%;
+    line-height:250px;
+    top:0;
+    cursor:pointer;
+    text-align:center;
+    transition:all 0.5s;
+    position:absolute;
+    color:white;
+}
+.icon:hover > .icon_fill{
+    width:0%;
+    color:transparent;
+}
+.icon:hover > .icon_fill .project_text{
+    color:white;
+    font-size: 0;
+}
+
+.open_intro_container{
+    width:50%;
+}
+
+.open_info_container{
+    width:50%;
+    opacity: 1;
+}
+
+.fill_page{
+    height:100% !important;
+    width:100% !important;
+}
+
+.reveal{
+    transition: 0.5s;
+    opacity:1 !important;
+}
+/*Customize Scroll bar*/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px #222; 
+    box-shadow: inset 0 0 6px #222; 
+    background-color: #222;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #eee;
+    box-shadow: inset 0 0 6px #eee;
+    background-color: #fff;
+}
+
+a{
+    text-decoration:underline;
+    color:rgba(150, 70, 70, 1);
+}
+
+#emailMe{
+    font-size:20px;
+} 
+#emailMe a {
+    color:white !important;
+}
+
+footer{
+    position:relative;
+    bottom:0;
+    left:0;
+    right:0;
+    margin-top:10px;
+    background-color:rgba(150, 70, 70, 1);
+    width:100%;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    color:white;
+}
+
+@media (max-width: 1000px) { 
+    .info_container{
+        position:absolute;
+        top:-50%;
+        width:100%;
+        height:50%;
+    }
+
+    .open_info_container{
+        width:100%;
+        height:50%;
+        position: absolute;
+        top:0%;
+        opacity: 1;
+    }
+    .open_intro_container{
+        width:100%;
+        height:50%;
+        position: absolute;
+        top:50%;   
+    }
+
+    .about_me{
+        width:90%;
+    }
+
+    .about_me p{
+        text-align: justify-all;
+        margin-top:5px;
+        font-size: 3vw;
+    }
+
+    #my_name{
+        font-size:10vw;
+    }
+}
